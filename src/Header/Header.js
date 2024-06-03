@@ -1,6 +1,7 @@
 import './Header.css'
 //import { useState } from 'react'
 
+
 function Header(){
     // const [search, setSearch] = useState('')
     // const handleSearch =(event) => {
@@ -12,9 +13,10 @@ function Header(){
         <>
             <header className='header'>
                 <div className='search'>
-                    <label>Search</label>
+                    <label htmlFor='search-input'>Search</label>
                     <input
                     type='text'
+                    id='search-input'
                     //value={}
                     placeholder='Find your next read!'
                     />
@@ -22,7 +24,7 @@ function Header(){
                 <div>
                     <h1>Love Library</h1>
                 </div>
-                <div>
+                <div className='about'>
                     <h3>About/Contact</h3>
                 </div>
             </header>
