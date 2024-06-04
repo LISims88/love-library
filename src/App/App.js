@@ -7,19 +7,30 @@ import getBooks from '../API/API';
 
 function App() {
   const [books, setBooks] = useState([])
+  const [loading, setLoading] = useState(true);
 
-  useEffect(() =>{
-    try {
-      const fetchedBooks = getBooks()
-      setBooks(fetchedBooks);
-    } catch (error) {
-      console.error('Error fetching data:', error)
-    }
-    getBooks()
-  }, [])
+  useEffect(() => {
+    const fetchBooks = async () => {
+      try {
+        const fetchedBooks = await getBooks();
+        setBooks(fetchedBooks);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBooks();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return(
     <>
-      <MainElements />
+      <MainElements books={books} />
     </>
   )
 }
