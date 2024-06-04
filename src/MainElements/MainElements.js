@@ -3,12 +3,12 @@ import Genre from "../Genre/Genre";
 import Header from "../Header/Header";
 //import TBR from "../TBR/TBR";
 
-function MainElements(){
+function MainElements({books}){
     return(
         <>
             <Header/>
-            <Author/>
-            <Genre/>
+            <Genre books={books}/>
+            <Author books={books}/>
             {/* <TBR/> */}
         </>
     )
