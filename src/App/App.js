@@ -35,9 +35,12 @@ function App() {
     <>
       <Header/>
       <div className='main-page'>
-      <MainElements books={books} />
-      <MainBook books={books} />
+        <MainElements books={books} />
+        <MainBook books={books} />
       </div>
+        <div className='button-container'>
+              <button>Show All Books</button>
+        </div>
     </>
   )
 }

@@ -1,17 +1,16 @@
 .main-book-container {
     display:  flex;
-    justify-content: center; /* Center horizontally */
-    align-items: flex-start; /* Center vertically */
-    height: 100vh; /* Full viewport height */
-    width: 100vw; /* Full viewport width */
-    margin-top: 1rem;
+    justify-content: center; 
+    align-items: flex-start; 
+    height: 80vh; 
+    width: 100vw; 
+    margin-top: 2rem;
   }
   .main-book {
     padding: 20px;
-    max-width: 400px;
-    text-align: center; /* Center text within the component */
-    background-color: #755985; /* Optional background color */
-    border-radius: 10px; /* Optional rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
-  }
-  
+    max-width: 400px; 
+    text-align: center; 
+    background-color: #755985; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  } 

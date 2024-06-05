@@ -5,8 +5,10 @@ import Genre from "../Genre/Genre";
 function MainElements({books}){
     return(
         <>
-            <Genre books={books}/>
-            <Author books={books}/>
+            <div>
+                <Genre books={books}/>
+                <Author books={books}/>
+            </div>
             {/* <TBR/> */}
         </>
     )
