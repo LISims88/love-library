@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import MainElements from '../MainElements/MainElements';
 import getBooks from '../API/API';
-import MainBook from '../MainBook/MainBook';
 import Header from '../Header/Header';
-
-
+import AllBooks from '../Results/AllBooks';
+import { Router,Routes, Route } from 'react-router-dom';
+import MainPage from '../Home/Home';
 
 function App() {
   const [books, setBooks] = useState([])
   const [loading, setLoading] = useState(true);
+  const [filterType, setFilterType] = useState([])
+  const [filterValue, setFilterValue] = useState([])
   const [tbr, setTbr] = useState([])
 
   useEffect(() => {
@@ -30,19 +31,21 @@ function App() {
   if (loading) {
     return <div>Loading...</div>;
   }
+  const handleFilterChange= (type,value) => {
+    setFilterType(type)
+    setFilterValue(value)
+  }
 
   return(
     <>
       <Header/>
-      <div className='main-page'>
-        <MainElements books={books} />
-        <MainBook books={books} />
-      </div>
-        <div className='button-container'>
-              <button>Show All Books</button>
-        </div>
+      <Routes>
+        <Route path="/" element={<MainPage books={books}/>}/>
+        <Route path="/all-books" element={<AllBooks books={books}/>}/>
+      </Routes>
     </>
-  )
+  );
+
 }
 
 export default App;

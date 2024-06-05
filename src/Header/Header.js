@@ -1,4 +1,5 @@
 import './Header.css'
+import { Link, NavLink } from 'react-router-dom';
 //import { useState } from 'react'
 
 
@@ -22,11 +23,12 @@ function Header(){
                     />
                 </div>
                 <div>
-                    <h1>Love Library</h1>
+                    <Link to={'/'}style={{ color: '#f4ebfe'}}><h1>Love Library</h1></Link>
                 </div>
                 <div className='about'>
-                    <h3>TBR</h3>
-                    <h3>About/Contact</h3>
+                    <NavLink to={'/tbr'} style={{ color: '#f4ebfe'}}><h3>TBR</h3></NavLink>
+                    <NavLink to={'/about-contact'} style={{ color: '#f4ebfe'}}><h3>About/Contact</h3></NavLink>
+                    
                 </div>
             </header>
         </>

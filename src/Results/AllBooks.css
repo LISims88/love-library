@@ -1,0 +1,39 @@
+.all-books-container {
+    position: relative; 
+    display:flex;
+    justify-content:flex-start; 
+    align-items: flex-start; 
+    height: 100vh; 
+}
+
+.books {
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 1rem; 
+    margin-left: 8rem; 
+    margin-top: 6rem;
+}
+
+.books img {
+    height: 15rem;
+    margin-bottom: 5rem;
+}
+
+.side-elements {
+    position: absolute;
+    top: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.genre-filter {
+    margin-top: 5rem;
+}
+/* .to-back {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    width: 100%; 
+    z-index: 1;
+} */

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Genre.css'
 
 function Genre({ books }) {
@@ -20,7 +21,9 @@ function Genre({ books }) {
           <ul className='genres'>
             {distinctGenres.map((genre, index) => (
               <li key={index}>
-                <span>{genre}</span>
+                <Link to={`/${genre}`} style={{ color: '#f4ebfe'}}>
+                  <span>{genre}</span>
+                </Link>
               </li>
             ))}
           </ul>
