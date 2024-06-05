@@ -4,7 +4,7 @@ import MainElements from '../MainElements/MainElements';
 import getBooks from '../API/API';
 import MainBook from '../MainBook/MainBook';
 import Header from '../Header/Header';
-
+import { Router,Routes, Link } from 'react-router-dom';
 
 
 function App() {
@@ -32,6 +32,7 @@ function App() {
   }
 
   return(
+
     <>
       <Header/>
       <div className='main-page'>
@@ -39,7 +40,9 @@ function App() {
         <MainBook books={books} />
       </div>
         <div className='button-container'>
+              <Link to= '/all-books'>
               <button>Show All Books</button>
+              </Link>
         </div>
     </>
   )

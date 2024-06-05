@@ -9,7 +9,6 @@ function MainElements({books}){
                 <Genre books={books}/>
                 <Author books={books}/>
             </div>
-            {/* <TBR/> */}
         </>
     )
 }
