@@ -1,21 +1,17 @@
 .main-page {
-  position: relative;
-  width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .side-elements {
-  position: relative;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
 }
-
 .genre {
-  left: 10px; 
+  left: 10px;
 }
 
 .author {
@@ -31,7 +27,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-left: 14rem;
+  margin-top: 20pt;
 }
 button{
   background-color: #755985;

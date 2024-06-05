@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Author.css'
 
 function Author({ books }) {
@@ -20,7 +21,9 @@ function Author({ books }) {
           <ul className='author'>
             {distinctAuthors.map((author, index) => (
               <li key={index}>
-                <span>{author}</span>
+                <Link to={`/${author}`} style={{ color: '#f4ebfe'}}>
+                  <span>{author}</span>
+                </Link>
               </li>
             ))}
           </ul>

@@ -1,10 +1,9 @@
 .main-book-container {
     display:  flex;
-    justify-content: center; 
-    align-items: flex-start; 
-    height: 80vh; 
+    align-items: center; 
+    height: 175vh; 
     width: 100vw; 
-    margin-top: 2rem;
+    flex-direction: column;
   }
   .main-book {
     padding: 20px;
@@ -14,3 +13,4 @@
     border-radius: 10px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   } 
+  

@@ -1,5 +1,6 @@
 import Author from '../Author/Author';
 import Genre from '../Genre/Genre';
+import { Link } from 'react-router-dom';
 import './MainBook.css'
 function MainBook({books}){
     const book =books[0]
@@ -16,6 +17,11 @@ function MainBook({books}){
                     <div className='rating'>
                         <h4>Rating: ⭐️ {book.average_rating}</h4>
                     </div>
+                </div>
+                <div className='button-container'>
+                    <Link to='/all-books'>
+                        <button>Show All Books</button>
+                    </Link>
                 </div>
             </div>
 
