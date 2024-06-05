@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import MainElements from '../MainElements/MainElements';
 import getBooks from '../API/API';
+import MainBook from '../MainBook/MainBook';
+import Header from '../Header/Header';
 
 
 
 function App() {
   const [books, setBooks] = useState([])
   const [loading, setLoading] = useState(true);
+  const [tbr, setTbr] = useState([])
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -30,7 +33,11 @@ function App() {
 
   return(
     <>
+      <Header/>
+      <div className='main-page'>
       <MainElements books={books} />
+      <MainBook books={books} />
+      </div>
     </>
   )
 }

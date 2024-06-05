@@ -1,9 +1,11 @@
 .author-filter{
     background-color: #755985;
     margin-top: 1rem;
-    width: 200px; /* Adjust the width as needed */
+    margin-left: 1rem;
+    width: 200px; 
     padding: 10px;
     left: 0;
     top: 0;
     bottom: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

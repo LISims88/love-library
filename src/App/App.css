@@ -3,3 +3,6 @@
   padding-left: 6pt;
   padding-right: 6pt;
 }
+.main-page{
+  display: flex;
+}
