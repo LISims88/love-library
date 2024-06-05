@@ -25,6 +25,7 @@ function Header(){
                     <h1>Love Library</h1>
                 </div>
                 <div className='about'>
+                    <h3>TBR</h3>
                     <h3>About/Contact</h3>
                 </div>
             </header>

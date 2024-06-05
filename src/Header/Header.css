@@ -15,9 +15,14 @@ input{
     display: flex;
     align-items: flex-end; 
     padding-bottom: 6pt;
+    margin-left: .5rem;
 }
 
 .about{
     display: flex;
     align-items:flex-start;
+    margin-right: .5rem;
+}
+h3{
+  margin-left: .5rem;  
 }

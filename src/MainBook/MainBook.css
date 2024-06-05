@@ -1,0 +1,16 @@
+.main-book-container {
+    display:  flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    height: 80vh; 
+    width: 100vw; 
+    margin-top: 2rem;
+  }
+  .main-book {
+    padding: 20px;
+    max-width: 400px; 
+    text-align: center; 
+    background-color: #755985; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  } 
