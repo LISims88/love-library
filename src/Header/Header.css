@@ -26,3 +26,11 @@ input{
 h3{
   margin-left: .5rem;  
 }
+.search button{
+    margin-left: .5rem;
+    height: 17.5pt;
+    width: 70pt;
+    border-radius: 0;
+    font-size: 12pt;
+    font-weight:bold;
+}

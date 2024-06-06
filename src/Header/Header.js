@@ -1,26 +1,30 @@
 import './Header.css'
 import { Link, NavLink } from 'react-router-dom';
-//import { useState } from 'react'
+import { useState } from 'react'
 
 
-function Header(){
-    // const [search, setSearch] = useState('')
-    // const handleSearch =(event) => {
-    //     event.preventDefault();
-    //     setSearch('');
-    //     const searchQuery =
-    // }
+function Header({onSearch}){
+    const [search, setSearch] = useState('')
+    const handleSearch =(event) => {
+        event.preventDefault();
+        if(onSearch){
+            onSearch(search)
+        }
+        setSearch('');
+   }
     return(
         <>
             <header className='header'>
                 <div className='search'>
                     <label htmlFor='search-input'>Search</label>
                     <input
-                    type='text'
-                    id='search-input'
-                    //value={}
+                    type='search'
+                    id='site-search'
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
                     placeholder='Find your next read!'
                     />
+                    <button onClick={handleSearch}>Search</button>
                 </div>
                 <div>
                     <Link to={'/'}style={{ color: '#f4ebfe'}}><h1>Love Library</h1></Link>
