@@ -7,13 +7,14 @@ import AllBooks from '../Results/AllBooks';
 import MainPage from '../Home/Home';
 import About from '../About/About';
 import TBR from '../TBR/TBR';
+import Search from '../Results/Search';
 
 function App() {
-  const [books, setBooks] = useState([])
+  const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState('')
-  const [filterType, setFilterType] = useState([])
-  const [filterValue, setFilterValue] = useState([])
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filterType, setFilterType] = useState('');
+  const [filterValue, setFilterValue] = useState('');
   // const [tbr, setTbr] = useState([])
 
   useEffect(() => {
@@ -34,29 +35,29 @@ function App() {
   if (loading) {
     return <div>Loading...</div>;
   }
-  const handleSearch = (query) =>{
-    searchQuery(query)
-  }
-  const handleFilterChange= (type,value) => {
-    setFilterType(type)
-    setFilterValue(value)
-  }
 
-  return(
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
+
+  const handleFilterChange = (type, value) => {
+    setFilterType(type);
+    setFilterValue(value);
+  };
+
+  return (
     <>
-      <Header/>
+      <Header />
       <Routes>
-        <Route path="/" element={<MainPage books={books}/>}/>
-        <Route path="/all-books" element={<AllBooks books={books}/>}/>
-        <Route path='/about-contact' element={<About/>}/>
-        <Route path='/tbr' element={<TBR/>} />
-        <Route />
-        <Route />
+        <Route path="/" element={<MainPage books={books} />} />
+        <Route path="/all-books" element={<AllBooks books={books} />} />
+        <Route path="/about-contact" element={<About />} />
+        <Route path="/tbr" element={<TBR />} />
+        {/* <Route path='' element={}/> */}
         <Route />
       </Routes>
     </>
   );
-
 }
 
 export default App;

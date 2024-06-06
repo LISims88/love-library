@@ -21,7 +21,9 @@ function MainBook({books,selectedGenre,selectedAuthor}){
             <div className='main-book-container'>
                 <div className='main-book'>   
                     <div className='bookImg'>
-                        <img src={highestRatedBook.imgsrc}/>
+                        <Link key={highestRatedBook.id} to={`/books/${highestRatedBook.id}`}>
+                        <img src={highestRatedBook.imgsrc} alt={highestRatedBook.title}/>
+                        </Link>
                     </div>
                     <div className='author'>
                         <h4>{highestRatedBook.author}</h4>
