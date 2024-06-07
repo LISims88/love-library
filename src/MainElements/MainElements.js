@@ -7,12 +7,10 @@ import './MainElements.css'
 function MainElements({books}){
     return(
         <>
-            <div>
+            <div className="side-elements">
                 <Genre books={books}/>
                 <Author books={books}/>
-                <div className="link">
-                    <Link to='/' style={{ color: '#f4ebfe', fontSize: '1.5em', fontWeight: 'bold' }} >Go Back</Link>
-                </div>
+                <Link to='/' style={{ color: '#f4ebfe', fontSize: '1.5em', fontWeight: 'bold' }} >Go Back</Link>
             </div>
         </>
     )

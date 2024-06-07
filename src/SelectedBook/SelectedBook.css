@@ -1,0 +1,27 @@
+.selected-book-container{
+    display:  flex;
+    align-items: center; 
+    height: 80vh; 
+    width: 100vw; 
+    flex-direction: row;
+    margin-top: 6.5rem;
+    padding: 20px;
+    max-width: 800px; 
+    text-align: center; 
+    background-color: #755985; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 20rem;
+}
+
+p{
+    text-align: justify;
+}
+
+.summary{
+    margin-left:2rem ;
+}
+.summary button{
+    margin-top: 2rem;
+    border-color: #f4ebfe;
+}

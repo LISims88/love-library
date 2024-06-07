@@ -11,8 +11,7 @@ function Author({ books }) {
         }
         return acc;
       }, []);
-    
-      
+          
       const distinctAuthors = [...new Set(allAuthors)];
     
       return (
@@ -21,7 +20,7 @@ function Author({ books }) {
           <ul className='author'>
             {distinctAuthors.map((author, index) => (
               <li key={index}>
-                <Link to={`/${author}`} style={{ color: '#f4ebfe'}}>
+                <Link to={`/search-term/author/${author}`} style={{ color: '#f4ebfe'}}>
                   <span>{author}</span>
                 </Link>
               </li>

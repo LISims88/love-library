@@ -1,9 +1,34 @@
-import './Suggested.css'
+import React from 'react';
+import './Suggested.css';
+import { Link } from 'react-router-dom';
 
-function Suggested ({books}) {
-//    suggestedBooks = books.filter()
-//     return(
-        
-//     )
+function shuffleArray(array) {
+  const shuffledArray = [...array];
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+  }
+  return shuffledArray;
 }
-export default Suggested
+
+function Suggested ({ filteredBooks }){
+  console.log('filtered', filteredBooks)
+  if (!filteredBooks || filteredBooks.length === 0) {
+    return <div>No suggested books available.</div>;
+  }
+  const shuffledBooks = shuffleArray(filteredBooks);
+
+  const booksToShow = shuffledBooks.slice(0, 6);
+
+  return (
+    <div className="suggested-books">
+      {booksToShow.map(book => (
+        <Link key={book.id} to={`/books/${book.id}`}>
+          <img src={book.imgsrc} alt={book.title} />
+        </Link>
+      ))}
+    </div>
+  );
+};
+
+export default Suggested;

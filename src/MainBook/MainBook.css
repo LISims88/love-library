@@ -1,9 +1,10 @@
 .main-book-container {
     display:  flex;
     align-items: center; 
-    height: 175vh; 
+    height: 170vh; 
     width: 100vw; 
     flex-direction: column;
+    margin-top: 6.5rem;
   }
   .main-book {
     padding: 20px;
