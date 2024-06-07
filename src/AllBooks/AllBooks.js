@@ -11,7 +11,7 @@ function AllBooks({ books }) {
       return book.genres.includes(genre);
     }
     if (author) {
-      return book.author === author;
+      return book.author.includes(author);
     }
     return true;
   });
@@ -28,14 +28,13 @@ function AllBooks({ books }) {
 
   return (
     <>
-    <MainElements books={books} />
+      <MainElements books={books}/>
       <div className='all-books-container'>
         <div className='books'>
           {sortedBooks.map((book) => {
-            const { id, imgsrc, title } = book;
             return (
-              <Link key={id} to={`/books/${id}`}>
-                <img src={imgsrc} alt={title} />
+              <Link key={book.id} to={`/books/${book.id}`}>
+                <img src={book.imgsrc} alt={book.title} />
               </Link>
             );
           })}

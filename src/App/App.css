@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
 }
+
 .genre {
   left: 10px;
 }
@@ -36,4 +37,11 @@ button{
   border-radius: 10pt;
   color: #f4ebfe;
   font-size: large;
+}
+.all-books-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 6rem 2rem; /* Adjust padding instead of height for better responsiveness */
 }

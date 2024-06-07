@@ -1,6 +1,5 @@
 import MainElements from "../MainElements/MainElements";
 import MainBook from "../MainBook/MainBook";
-import { Link } from "react-router-dom";
 
 function MainPage({ books }) {
     return (
