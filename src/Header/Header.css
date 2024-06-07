@@ -4,19 +4,6 @@
     justify-content: space-between;
     background-color: #755985;
 }
-label{
-    margin-right: 3pt;
-    font-weight: bold;
-}
-input{
-    margin-left: 3pt;
-}
-.search {
-    display: flex;
-    align-items: flex-end; 
-    padding-bottom: 6pt;
-    margin-left: .5rem;
-}
 
 .about{
     display: flex;
@@ -26,11 +13,6 @@ input{
 h3{
   margin-left: .5rem;  
 }
-.search button{
-    margin-left: .5rem;
-    height: 17.5pt;
-    width: 70pt;
-    border-radius: 0;
-    font-size: 12pt;
-    font-weight:bold;
+h1{
+  margin-left: 2rem;
 }

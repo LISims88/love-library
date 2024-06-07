@@ -5,7 +5,9 @@ function MainPage({ books }) {
     return (
         <>
             <div className='main-page'>
-                <MainElements books={books} />
+                <div>
+                    <MainElements books={books} />
+                </div>
                 <MainBook books={books} />
             </div>
         </>

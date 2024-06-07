@@ -1,23 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Suggested.css';
+import { Link } from 'react-router-dom';
 
-const Suggested = ({ books, filterType, filterValue }) => {
-  const [filteredBooks, setFilteredBooks] = useState([]);
+function shuffleArray(array) {
+  const shuffledArray = [...array];
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+  }
+  return shuffledArray;
+}
 
-  useEffect(() => {
+function Suggested ({ filteredBooks }){
+  console.log('filtered', filteredBooks)
+  if (!filteredBooks || filteredBooks.length === 0) {
+    return <div>No suggested books available.</div>;
+  }
+  const shuffledBooks = shuffleArray(filteredBooks);
 
-    if (filterType && filterValue && books.length > 0) {
-      const filtered = books.filter(book => book[filterType] === filterValue);
-      setFilteredBooks(filtered.slice(0, 6));
-    }
-  }, [filterType, filterValue, books]);
+  const booksToShow = shuffledBooks.slice(0, 6);
 
   return (
     <div className="suggested-books">
-      {filteredBooks.map(book => (
-        <a href={book.link} key={book.id} target="_blank" rel="noopener noreferrer">
-          <img src={book.coverImage} alt={book.title} />
-        </a>
+      {booksToShow.map(book => (
+        <Link key={book.id} to={`/books/${book.id}`}>
+          <img src={book.imgsrc} alt={book.title} />
+        </Link>
       ))}
     </div>
   );

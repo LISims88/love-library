@@ -20,7 +20,7 @@ function Author({ books }) {
           <ul className='author'>
             {distinctAuthors.map((author, index) => (
               <li key={index}>
-                <Link to={`filter-results/author/${author}`} style={{ color: '#f4ebfe'}}>
+                <Link to={`/search-term/author/${author}`} style={{ color: '#f4ebfe'}}>
                   <span>{author}</span>
                 </Link>
               </li>

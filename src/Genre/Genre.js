@@ -21,7 +21,7 @@ function Genre({ books }) {
           <ul className='genres'>
             {distinctGenres.map((genre, index) => (
               <li key={index}>
-                <Link to={`/filter-results/genre/${genre}`} style={{ color: '#f4ebfe'}}>
+                <Link to={`/search-term/genres/${genre}`} style={{ color: '#f4ebfe'}}>
                   <span>{genre}</span>
                 </Link>
               </li>

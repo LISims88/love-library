@@ -4,7 +4,7 @@ import './App.css';
 import getBooks from '../API/API';
 import Header from '../Header/Header';
 import AllBooks from '../AllBooks/AllBooks';
-import MainPage from '../Home/Home';
+import MainPage from '../MainPage/MainPage';
 import About from '../About/About';
 import TBR from '../TBR/TBR';
 import SelectedBook from '../SelectedBook/SelectedBook';
@@ -29,12 +29,25 @@ function App() {
     };
 
     fetchBooks();
-  }, []); // Only run once on mount
+  }, []);
 
   const handleAddToTBR = (book) => {
     const updatedTBR = [...tbr, book];
     setTbr(updatedTBR);
     localStorage.setItem('tbr', JSON.stringify(updatedTBR));
+  };
+  const filterBooks = (books, genre, author) => {
+    console.log(`Filtering with genre: ${genre}`);
+    console.log(`Filtering with author: ${author}`);
+    return books.filter((book) => {
+      if (genre && !book.genres.some(g => g.toLowerCase() === genre.toLowerCase())) {
+        return false;
+      }
+      if (author && !book.author.some(a => a.toLowerCase() === author.toLowerCase())) {
+        return false;
+      }
+      return true;
+    });
   };
 
   if (loading) {
@@ -46,15 +59,16 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<MainPage books={books} />} />
-        <Route path="/all-books" element={<AllBooks books={books} />} />
-        <Route path="/about-contact" element={<About />} />
+        <Route path="/books" element={<AllBooks books={books} filterBooks={filterBooks} />} />
+        <Route path="/books/:id" element={<SelectedBook books={books} onAddToTBR={handleAddToTBR} filterBooks={filterBooks}/>} />
+        <Route path="/search-term/genres/:genre" element={<AllBooks books={books} filterBooks={filterBooks} />} />
+        <Route path="/search-term/author/:author" element={<AllBooks books={books} filterBooks={filterBooks} />} />
         <Route path="/tbr" element={<TBR tbr={tbr} />} />
-        <Route path="/books/:id" element={<SelectedBook books={books} onAddToTBR={handleAddToTBR} />} />
-        <Route path="/filter-results/genre/:genre" element={<AllBooks books={books} />} />
-        <Route path="/filter-results/author/:author" element={<AllBooks books={books} />} />
+        <Route path="/about-contact" element={<About />} />
       </Routes>
     </>
   );
-}
-
-export default App;
+  }
+  
+  export default App;
+  

@@ -1,7 +1,7 @@
 import './Header.css'
 import { Link, NavLink } from 'react-router-dom';
 
-function Header({onSearch}){
+function Header(){
     
     return(
         <>

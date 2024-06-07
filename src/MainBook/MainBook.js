@@ -1,5 +1,3 @@
-import Author from '../Author/Author';
-import Genre from '../Genre/Genre';
 import { Link } from 'react-router-dom';
 import './MainBook.css'
 
@@ -33,7 +31,7 @@ function MainBook({books,selectedGenre,selectedAuthor}){
                     </div>
                 </div>
                 <div className='button-container'>
-                    <Link to='/all-books'>
+                    <Link to='/books'>
                         <button>Show All Books</button>
                     </Link>
                 </div>

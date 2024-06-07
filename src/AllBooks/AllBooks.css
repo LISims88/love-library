@@ -1,17 +1,16 @@
 .all-books-container {
-    position: relative; 
-    display:flex;
-    justify-content:flex-start; 
-    align-items: flex-start; 
+    display:  flex;
+    align-items: center; 
     height: 100vh; 
-}
-
+    width: 100vw; 
+    flex-direction: column;
+}    
 .books {
     display: grid; 
     grid-template-columns: repeat(4, 1fr); 
     gap: 1rem; 
     margin-left: 8rem; 
-    margin-top: 6rem;
+   
 }
 
 .books img {
@@ -25,6 +24,8 @@
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
+    margin-top: 5rem;
+    align-items: center;
 }
 
 .genre-filter {

@@ -1,0 +1,11 @@
+.suggested-books{
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 1rem; 
+    margin-left: 8rem; 
+    margin-top: 5rem;
+}
+.suggested-books img{
+    height: 15rem;
+    margin-bottom: 5rem;
+}

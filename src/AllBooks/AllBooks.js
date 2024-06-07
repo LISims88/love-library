@@ -3,18 +3,10 @@ import { Link, useParams } from 'react-router-dom';
 import MainElements from '../MainElements/MainElements';
 import './AllBooks.css';
 
-function AllBooks({ books }) {
+function AllBooks({ books, filterBooks }) {
   const { genre, author } = useParams();
 
-  const filteredBooks = books.filter((book) => {
-    if (genre) {
-      return book.genres.includes(genre);
-    }
-    if (author) {
-      return book.author.includes(author);
-    }
-    return true;
-  });
+  const filteredBooks = filterBooks(books, genre, author);
 
   const sortedBooks = filteredBooks.sort((a, b) => {
     if (a.author < b.author) {
@@ -26,10 +18,13 @@ function AllBooks({ books }) {
     return 0;
   });
 
+
   return (
     <>
-      <MainElements books={books}/>
-      <div className='all-books-container'>
+      <div className='side-elements'>
+      </div>
+        <MainElements books={books}/>
+      <div className='main page all-books-container'>
         <div className='books'>
           {sortedBooks.map((book) => {
             return (
