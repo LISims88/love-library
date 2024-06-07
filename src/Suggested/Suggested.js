@@ -21,12 +21,14 @@ function Suggested ({ filteredBooks }){
   const booksToShow = shuffledBooks.slice(0, 6);
 
   return (
-    <div className="suggested-books">
-      {booksToShow.map(book => (
-        <Link key={book.id} to={`/books/${book.id}`}>
-          <img src={book.imgsrc} alt={book.title} />
-        </Link>
-      ))}
+    <div className='container'>
+      <div className="suggested-books">
+        {booksToShow.map(book => (
+          <Link key={book.id} to={`/books/${book.id}`}>
+            <img src={book.imgsrc} alt={book.title} />
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };

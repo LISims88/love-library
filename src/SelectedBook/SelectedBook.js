@@ -49,7 +49,9 @@ function SelectedBook({ books, filterBooks}) {
                         <button onClick={handleAddToTBR}>Add to TBR</button>
                     </div>
                 </div>
+                <div className='main-page suggested'>
                 <Suggested filteredBooks={suggestedBooks}/>
+                </div>
             </div>
         </>
     );
