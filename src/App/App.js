@@ -3,19 +3,14 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import getBooks from '../API/API';
 import Header from '../Header/Header';
-import AllBooks from '../Results/AllBooks';
+import AllBooks from '../AllBooks/AllBooks';
 import MainPage from '../Home/Home';
 import About from '../About/About';
 import TBR from '../TBR/TBR';
-import Search from '../Results/Search';
 
 function App() {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [filterType, setFilterType] = useState('');
-  const [filterValue, setFilterValue] = useState('');
-  // const [tbr, setTbr] = useState([])
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -36,15 +31,6 @@ function App() {
     return <div>Loading...</div>;
   }
 
-  const handleSearch = (query) => {
-    setSearchQuery(query);
-  };
-
-  const handleFilterChange = (type, value) => {
-    setFilterType(type);
-    setFilterValue(value);
-  };
-
   return (
     <>
       <Header />
@@ -53,8 +39,8 @@ function App() {
         <Route path="/all-books" element={<AllBooks books={books} />} />
         <Route path="/about-contact" element={<About />} />
         <Route path="/tbr" element={<TBR />} />
-        {/* <Route path='' element={}/> */}
-        <Route />
+        <Route path="/filter-results/genre/:genre" element={<AllBooks books={books} />} />
+        <Route path="/filter-results/author/:author" element={<AllBooks books={books} />} />
       </Routes>
     </>
   );
