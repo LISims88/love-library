@@ -11,7 +11,7 @@
 
 .side-elements {
   position: fixed;
-  top: 720ptg; 
+  top: 720pt; 
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
