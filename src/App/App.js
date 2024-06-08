@@ -36,9 +36,8 @@ function App() {
     setTbr(updatedTBR);
     localStorage.setItem('tbr', JSON.stringify(updatedTBR));
   };
+
   const filterBooks = (books, genre, author) => {
-    console.log(`Filtering with genre: ${genre}`);
-    console.log(`Filtering with author: ${author}`);
     return books.filter((book) => {
       if (genre && !book.genres.some(g => g.toLowerCase() === genre.toLowerCase())) {
         return false;
@@ -63,7 +62,7 @@ function App() {
         <Route path="/books/:id" element={<SelectedBook books={books} onAddToTBR={handleAddToTBR} filterBooks={filterBooks}/>} />
         <Route path="/search-term/genres/:genre" element={<AllBooks books={books} filterBooks={filterBooks} />} />
         <Route path="/search-term/author/:author" element={<AllBooks books={books} filterBooks={filterBooks} />} />
-        <Route path="/tbr" element={<TBR tbr={tbr} />} />
+        <Route path="/tbr" element={<TBR tbr={tbr} setTbr={setTbr} />} />
         <Route path="/about-contact" element={<About />} />
       </Routes>
     </>

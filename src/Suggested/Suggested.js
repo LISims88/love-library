@@ -12,7 +12,6 @@ function shuffleArray(array) {
 }
 
 function Suggested ({ filteredBooks }){
-  console.log('filtered', filteredBooks)
   if (!filteredBooks || filteredBooks.length === 0) {
     return <div>No suggested books available.</div>;
   }
@@ -21,12 +20,15 @@ function Suggested ({ filteredBooks }){
   const booksToShow = shuffledBooks.slice(0, 6);
 
   return (
-    <div className="suggested-books">
-      {booksToShow.map(book => (
-        <Link key={book.id} to={`/books/${book.id}`}>
-          <img src={book.imgsrc} alt={book.title} />
-        </Link>
-      ))}
+    <div className='container'>
+      <h2 className='next'>Next Reads:</h2>
+      <div className="suggested-books">
+        {booksToShow.map(book => (
+          <Link key={book.id} to={`/books/${book.id}`}>
+            <img src={book.imgsrc} alt={book.title} />
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };
