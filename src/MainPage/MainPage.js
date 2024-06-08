@@ -5,10 +5,12 @@ function MainPage({ books }) {
     return (
         <>
             <div className='main-page'>
-                <div>
+                <div className="element">
                     <MainElements books={books} />
                 </div>
-                <MainBook books={books} />
+                <div className="book">
+                    <MainBook books={books} />
+                </div>
             </div>
         </>
     );

@@ -1,11 +1,3 @@
-
-body, html {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-
 .main-page {
   display: flex;
   justify-content: center;
@@ -13,24 +5,37 @@ body, html {
   flex-direction: column; 
   padding: 20px;
 }
-
+.element{
+  margin-top: 18rem;
+}
 
 .side-elements {
-  position: absolute;
-  top: 50%;
+  position: fixed;
+  top: 720pt; 
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  width: 100%;
-  margin-top: 7rem;
+  margin-top: 75rem;
 }
 
+/* Adjust margin-top to ensure proper spacing */
 .genre {
   left: 10px;
+  margin-top: 1rem; /* Add margin-top */
 }
 
 .author {
-  right: 10px; 
+  right: 10px;
+  margin-top: 1rem; /* Add margin-top */
+}
+
+/* Ensure the header does not cover the content */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure the header stays above other content */
 }
 
 .main-book {
@@ -52,8 +57,8 @@ body, html {
 
 button {
   background-color: #755985; 
-  height: 30pt; 
-  width: 120pt; 
+  height: 40pt; 
+  width: 130pt; 
   border-radius: 10pt; 
   color: #f4ebfe; 
   font-size: large; 
@@ -82,7 +87,7 @@ img {
   height: auto;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 720px) {
   .main-page {
     flex-direction: row; 
   }
@@ -98,7 +103,7 @@ img {
 }
 
 
-@media (min-width: 1024px) {
+@media(min-width: 992px) {
   .main-page {
     padding: 3rem;
   }
