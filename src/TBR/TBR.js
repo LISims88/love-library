@@ -18,7 +18,7 @@ function TBR({ tbr, setTbr }) {
     return (
         <div className='tbr-container'>
             <h2>To Be Read List:</h2>
-            <div className='tbr'>
+            <div className='tbr-item'>
                 {uniqueBooks.map((book) => (
                  <img
                     key={book.id}
