@@ -5,7 +5,7 @@ import './About.css'
         <>
             <div className='about-container'>
                 <div  className='picture'>
-                    <img src='https://avatars.githubusercontent.com/u/149545941?v=4'/>
+                    <img src='https://avatars.githubusercontent.com/u/149545941?v=4' alt='profile'/>
                 </div>
                 <div className='about-contact'>
                     <h2>About Me</h2>
