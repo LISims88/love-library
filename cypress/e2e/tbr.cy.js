@@ -74,3 +74,16 @@ describe('View TBR', () => {
     });
   });
 });
+
+describe('All Books sad path', () => {
+  beforeEach(() => {
+    cy.intercept("GET", "http://localhost:4000/api/v1/books", {
+      statusCode: 500, 
+      fixture: 'books.json' 
+    }).as('bookTest');
+    cy.visit('http://localhost:3000/tbr');
+  });
+  it('should be empty', () => {
+    cy.get('h2').contains('To Be Read List:').should('be.visible');
+  });
+});

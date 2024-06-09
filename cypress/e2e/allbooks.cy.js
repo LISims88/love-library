@@ -31,3 +31,16 @@ describe('All Books', () => {
     cy.url().should('include', '/books/76');
   });
 });
+describe('All Books sad path', () => {
+  beforeEach(() => {
+    cy.intercept("GET", "http://localhost:4000/api/v1/books", {
+      statusCode: 500, 
+      fixture: 'books.json' 
+    }).as('bookTest');
+    cy.visit('http://localhost:3000');
+  });
+
+  it('displays an error message when unable to fetch books', () => {
+    cy.get('.main-page > :nth-child(2)').should('contain', 'No books available');
+  });
+});

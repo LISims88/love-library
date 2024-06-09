@@ -33,3 +33,24 @@ describe('side Elements', () => {
     cy.url().should('include', '/');
   });
 });
+describe('Side element sad path', () => {
+  beforeEach(() => {
+    cy.intercept("GET", "http://localhost:4000/api/v1/books", {
+      statusCode: 500, 
+      fixture: 'books.json' 
+    }).as('bookTest');
+    cy.visit('http://localhost:3000');
+  });
+
+  it('displays an error message when unable to fetch books', () => {
+    cy.get('.main-page > :nth-child(2)').should('contain', 'No books available'); 
+  });
+  it('Genres empty', () => {
+    cy.get('.genre-filter').should('contain', 'Genre');
+    cy.get('.genres').should('be.empty');
+  });
+  it('Authors empty ', () => {
+    cy.get('.author-filter').should('contain', 'Author');
+    cy.get('.author').should('be.empty');
+});
+});
