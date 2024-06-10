@@ -5,7 +5,7 @@ describe('Main Page', () => {
 });
 describe('Main Book Container', () => {
   beforeEach(() => {
-    cy.intercept("GET", "http://localhost:4000/api/v1/books", {
+    cy.intercept("GET", "https://romance-api.onrender.com/api/v1/books", {
       statusCode: 200,
       fixture: 'books.json'
     }).as('bookTest');
@@ -28,7 +28,7 @@ describe('Main Book Container', () => {
 });
 describe('Main Book Sad path', () => {
   beforeEach(() => {
-    cy.intercept("GET", "http://localhost:4000/api/v1/books", {
+    cy.intercept("GET", "https://romance-api.onrender.com/api/v1/books", {
       statusCode: 500, 
       fixture: 'books.json' 
     }).as('bookTest');

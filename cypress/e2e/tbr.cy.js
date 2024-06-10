@@ -6,7 +6,7 @@ describe('Main Page', () => {
 
 describe('Add to TBR', () => {
   beforeEach(() => {
-    cy.intercept("GET", "http://localhost:4000/api/v1/books", {
+    cy.intercept("GET", "https://romance-api.onrender.com/api/v1/books", {
       statusCode: 200,
       fixture: 'books.json'
     }).as('bookTest');
@@ -77,7 +77,7 @@ describe('View TBR', () => {
 
 describe('All Books sad path', () => {
   beforeEach(() => {
-    cy.intercept("GET", "http://localhost:4000/api/v1/books", {
+    cy.intercept("GET", "https://romance-api.onrender.com/api/v1/books", {
       statusCode: 500, 
       fixture: 'books.json' 
     }).as('bookTest');

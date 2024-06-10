@@ -6,7 +6,7 @@ describe('Main Page', () => {
 
 describe('header component', () => {
   beforeEach(() => {
-    cy.intercept("GET", "http://localhost:4000/api/v1/books", {
+    cy.intercept("GET", "https://romance-api.onrender.com/api/v1/books", {
       statusCode: 200,
       fixture: 'books.json'
     }).as('bookTest');
