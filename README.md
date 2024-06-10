@@ -22,13 +22,13 @@ PostgreSQL server for data storage
 
 
 # Installation
-To run Love Library  locally, you will need to set up the backend. Instructions for this are available in the backend repository. Alternatively, you can check out our live deployment. Note that the live backend server may have a slow startup time if it has been idle.
+To run Love Library locally, you will need to set up the backend. Instructions for this are available in the backend repository.
 
-  git clone git@github.com:LISims88/love-library.git
-  cd love-library
-  npm install
-  npm start
-  The server should be running on: localhost:3000
+  `git clone git@github.com:LISims88/love-library.git`
+  `cd love-library`
+  `npm install`
+  `npm start`
+  The server should be running on: `localhost:3000`
 
 # Running Tests
 To run our Cypress tests, run the following command
