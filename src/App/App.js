@@ -8,6 +8,7 @@ import MainPage from '../MainPage/MainPage';
 import About from '../About/About';
 import TBR from '../TBR/TBR';
 import SelectedBook from '../SelectedBook/SelectedBook';
+import Error from '../Error/Error';
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -64,6 +65,7 @@ function App() {
         <Route path="/search-term/author/:author" element={<AllBooks books={books} filterBooks={filterBooks} />} />
         <Route path="/tbr" element={<TBR tbr={tbr} setTbr={setTbr} />} />
         <Route path="/about-contact" element={<About />} />
+        <Route path='*' element={<Error/>}/>
       </Routes>
     </>
   );

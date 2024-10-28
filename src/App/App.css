@@ -10,8 +10,8 @@
 }
 
 .side-elements {
-  position: fixed;
-  top: 720pt; 
+  position: absolute;
+  top: 732pt;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;

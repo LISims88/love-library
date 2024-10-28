@@ -1,4 +1,4 @@
-/* Base styles for the selected book container */
+
 .selected-book-container {
     display: flex;
     align-items: center;
@@ -6,46 +6,50 @@
     width: 100vw;
     flex-direction: row;
     margin-top: 6.5rem;
-    padding: 20px;
+    padding: 0px;
     max-width: 800px;
     text-align: center;
     background-color: #755985;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-left: 23rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
   
   img{
     max-width: 15rem;
   }
-  /* Paragraph styles */
+
   p {
     text-align: justify;
   }
   
-  /* Summary styles */
+
   .summary {
     margin-left: 2rem;
   }
   
-  /* Summary button styles */
   .summary button {
-    background-color: #755985; /* Background color */
-  height: 30pt; /* Height */
-  width: 120pt; /* Width */
-  border-radius: 10pt; /* Rounded corners */
-  color: #f4ebfe; /* Text color */
-  font-size: large; /* Font size */
-  border: 2px solid #f4ebfe; /* Border with color */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease; /* Smooth transition for background color */
+    background-color: #755985; 
+  height: 30pt; 
+  width: 120pt;
+  border-radius: 10pt;
+  color: #f4ebfe; 
+  font-size: large;
+  border: 2px solid #f4ebfe; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+}
+.side-elements{
+  top:732px;
 }
 
 button:hover {
-  background-color: #6b4d7a; /* Slightly darker background color on hover */
+  background-color: #6b4d7a; 
 }
   
-  /* Responsive styles for medium screens */
+  
   @media (max-width: 900px) {
     .selected-book-container {
       flex-direction: column;
