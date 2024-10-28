@@ -22,18 +22,21 @@ PostgreSQL server for data storage
 
 
 # Installation
-To run Love Library  locally, you will need to set up the backend. Instructions for this are available in the backend repository. Alternatively, you can check out our live deployment. Note that the live backend server may have a slow startup time if it has been idle.
+To run Love Library locally, you will need to set up the backend. Instructions for this are available in the backend repository here:
 
-  git clone git@github.com:LISims88/love-library.git
-  cd love-library
-  npm install
-  npm start
-  The server should be running on: localhost:3000
+https://github.com/LISims88/romance-api
+
+  `git clone git@github.com:LISims88/love-library.git`
+  `cd love-library`
+  `npm install`
+  `npm start`
+  
+  The server should be running on: `localhost:3000`
 
 # Running Tests
-To run our Cypress tests, run the following command
+To run Cypress tests, run the following command
 
-  npx cypress open
+  `npx cypress open`
 
 From there the Cypress test runner will run. For more information on Cypress, check out the Cypress documentation
 
@@ -45,5 +48,3 @@ The primary objective was to create a full-stack application utilizing React for
 
 This project was a major lesson in strengthening my skills as Front End Developer with the Possibility of moving more towards Full Stack.
 
-### Author
-Lydia Sims - @LISims88
